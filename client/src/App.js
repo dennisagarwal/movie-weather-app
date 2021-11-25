@@ -1,5 +1,5 @@
 import './App.css';
-import Row from './Components/Row';
+import Row from './Components/Row/Row';
 import requests from './requests';
 const API_KEY = "e0cf5e21ab86909a17aa9ca1c8c7a5b4";
 
