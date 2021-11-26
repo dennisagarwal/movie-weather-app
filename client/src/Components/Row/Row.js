@@ -34,7 +34,7 @@ function Row({ heading, requestUrl }) {
     infinite: true,
     speed: 500,
     slidesToShow: 10,
-    slidesToScroll: 5,
+    slidesToScroll: 8,
   };
   return (
     <div className="row">
