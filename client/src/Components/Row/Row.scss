@@ -1,9 +1,11 @@
 .row{
+  margin-left:1.5rem;
+  color:white;
 &__cards{
-  width:100%;
+  // width:100%;
   display:flex;
   flex-direction: row;
-  padding:1.5rem;
+  padding:1rem;
   overflow-y: hidden;
   overflow-x: scroll;
 }
@@ -16,14 +18,17 @@
     width:100%;
     object-fit: contain;
     max-height: 10rem;
-    margin-right: .5rem;
-    transition: transfrom 500ms;
+    margin-right:0.5rem;
 
+    transition: transfrom 1000ms;
+    border-radius: 0.5rem;
    }
+
 }
-.row__cards::-webkit-scrollbar{
-  display:none;
-}
+// .row__cards::-webkit-scrollbar{
+//   display:none;
+// }
 .row__card:hover{
-transform:scale(1.08);
+transform:scale(1.2);
+border-radius: 0.5rem;
 }
