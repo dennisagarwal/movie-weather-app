@@ -1,6 +1,7 @@
 import './App.scss';
 import Row from './Components/Row/Row';
-import Hero from './Components/Hero/Hero'
+import Hero from './Components/Hero/Hero';
+import NavBar from './Components/NavBar/NavBar';
 import requests from './requests';
 import { useGeolocation } from './Components/useGeolocation/useGeolocation';
 
@@ -10,6 +11,7 @@ function App() {
   const location=useGeolocation()
   return (
     <div className="App">
+    <NavBar />
     <Hero />
      <Row heading="Trending Now" requestUrl={requests.requestTrending} />
     <Row heading="Netflix Originals" requestUrl={requests.requestNetFlixOriginals}/>
