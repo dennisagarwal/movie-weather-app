@@ -1,39 +1,22 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from "axios";
-import "./Row.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
+import SearchBox from "../SearchBox/SearchBox";
+import SearchMovieName from "../SearchMovieName/SearchMovieName";
 import Youtube from "react-youtube";
 import movieTrailer from "movie-trailer";
-// import Search from "../Search/Search";
-const API_KEY = "e0cf5e21ab86909a17aa9ca1c8c7a5b4";
-const urlStart = "https://image.tmdb.org/t/p/original/";
+const API_KeyOMDb = "edf3f73f";
 
-// function Row(props) {, we are destructuring in the line below
-//passing heading and request  url as props below
-function Row({ heading, requestUrl }) {
-  //use of react hook
-  //setting initial state as movies
-  const [movies, setMovies] = useState([]);
+function Search() {
+
+  const [movies, setMovies] = useState([])
+  const [searchValue,setSearchValue]=useState("");
   const [trailerUrl, setTrailerUrl] = useState("");
 
-  useEffect(() => {
-    //async function for hooks as axios will take some time to load from third party server
-    //fetching request is bringing the data from the url in axios.get()
-    async function getRequest() {
-      const waitToLoad = await axios.get(requestUrl);
-      //`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}` is one example
-      setMovies(waitToLoad.data.results);
-      // console.log(waitToLoad.data.results)
-      return waitToLoad;
-    }
-    getRequest();
-  }, [requestUrl]);
-
-  console.log(movies);
   let settings = {
     dots: true,
     infinite: true,
@@ -41,7 +24,6 @@ function Row({ heading, requestUrl }) {
     slidesToShow: 10,
     slidesToScroll: 8,
   };
-  //refer https://www.npmjs.com/package/react-youtube
   const opts = {
     height: "400",
     width: "100%",
@@ -51,19 +33,16 @@ function Row({ heading, requestUrl }) {
     },
   };
 
-  const handleMovieClick = (movie) => {
+  const handleSearchMovieClick = (movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
       movieTrailer(
-        movie?.name ||
-          movie.original_name ||
-          movie.title ||
-          movie.overview ||
-          ""
+        movie?.Title ||
+        ""
       )
         .then((url) => {
-          console.log(movie?.name || movie.title || "hello");
+          console.log(movie?.Title || "hello");
           //https://www.youtube.com/watch?v=_nBlN9yp9R8
           const urlParams = new URLSearchParams(new URL(url).search);
           console.log(new URL(url).search);
@@ -75,6 +54,7 @@ function Row({ heading, requestUrl }) {
     }
   };
 
+
   const _onReady = (event) => {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
@@ -82,23 +62,44 @@ function Row({ heading, requestUrl }) {
   const _onStateChange = (event) => {
     // event.target.pauseVideo()
   };
+
+  useEffect(() => {
+    for (let page=1 ; page<2;page++){
+      page++
+    }
+    //async function for hooks as axios will take some time to load from third party server
+    //fetching request is bringing the data from the url in axios.get()
+    async function getMovieRequest(searchValue) {
+
+      const waitToLoad = await axios.get( `http://www.omdbapi.com/?s=${searchValue}&apikey=edf3f73f&page=1`);
+      //`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}` is one example
+     if(waitToLoad.data.Search){
+      setMovies(waitToLoad.data.Search);
+     }
+      console.log(waitToLoad.data.Search)
+      return waitToLoad;
+    }
+    getMovieRequest(searchValue);
+  }, [searchValue]);
+console.log(movies);
   return (
     <div className="row">
-      <h2>{heading}</h2>
+    <SearchMovieName headingSearch='Movies' />
+     <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}  />
+
       <Slider {...settings} className="row__cards">
-        {/* <div  > */}
-
-        {movies.map((movie) => (
-          <img
-            key={movie.id}
+        {movies.map((movie, index) => (
+          <div>
+            <img
+              key={movie.id}
             className="row__card"
-            src={`${urlStart}${movie.poster_path}`}
-            alt={movie.name}
-            onClick={() => handleMovieClick(movie)}
-          />
+            src={movie.Poster}
+            alt="movie"
+            onClick={() => handleSearchMovieClick(movie)
+            }
+            />
+          </div>
         ))}
-
-        {/* </div> */}
       </Slider>
       {trailerUrl && (
         <Youtube
@@ -112,4 +113,4 @@ function Row({ heading, requestUrl }) {
   );
 }
 
-export default Row;
+export default Search;

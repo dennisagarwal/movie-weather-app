@@ -1,0 +1,27 @@
+.row{
+  margin-left:1.5rem;
+  color:white;
+&__cards{
+  // width:100%;
+  display:flex;
+  flex-direction: row;
+  padding:1rem;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+::-webkit-scrollbar{
+  display:none;
+}
+
+
+  &__card{
+    width:100%;
+    object-fit: contain;
+    max-height: 10rem;
+    margin-right:0.5rem;
+
+    transition: transfrom 1000ms;
+    border-radius: 0.5rem;
+   }
+
+}
