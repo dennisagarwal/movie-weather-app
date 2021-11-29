@@ -1,7 +1,7 @@
-.row{
+.rowSearch{
   margin-left:1.5rem;
   color:white;
-&__cards{
+&__cardsSearch{
   // width:100%;
   display:flex;
   flex-direction: row;
@@ -12,9 +12,24 @@
 ::-webkit-scrollbar{
   display:none;
 }
+// &__container:hover .overlay {
+// 	opacity: 1;
+// }
+// &__overlay{
+//   z-index: 1;
+// 	position: absolute;
+// 	background: rgba(0, 0, 0, 0.8);
+// 	width: 100%;
+// 	transition: 0.5s ease;
+// 	opacity: 0;
+// 	bottom: 0;
+// 	font-size: 20px;
+// 	padding: 20px;
+// 	text-align: center;
+// }
 
 
-  &__card{
+  &__cardSearch{
     width:100%;
     object-fit: contain;
     max-height: 10rem;
@@ -25,3 +40,7 @@
    }
 
 }
+.rowSearch__cardSearch:hover{
+  transform:scale(1.2);
+  border-radius: 0.5rem;
+  }

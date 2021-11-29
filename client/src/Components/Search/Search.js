@@ -1,4 +1,5 @@
 import React from "react";
+import "./Search.scss"
 import { useState } from "react";
 import { useEffect } from "react";
 import Slider from "react-slick";
@@ -9,11 +10,13 @@ import SearchBox from "../SearchBox/SearchBox";
 import SearchMovieName from "../SearchMovieName/SearchMovieName";
 import Youtube from "react-youtube";
 import movieTrailer from "movie-trailer";
+import WatchLater from "../WatchLater/WatchLater";
 const API_KeyOMDb = "edf3f73f";
 
 function Search() {
 
   const [movies, setMovies] = useState([])
+  const [watchLaterMovies, setWatchLaterMovies] = useState([]);
   const [searchValue,setSearchValue]=useState("");
   const [trailerUrl, setTrailerUrl] = useState("");
 
@@ -64,9 +67,7 @@ function Search() {
   };
 
   useEffect(() => {
-    for (let page=1 ; page<2;page++){
-      page++
-    }
+
     //async function for hooks as axios will take some time to load from third party server
     //fetching request is bringing the data from the url in axios.get()
     async function getMovieRequest(searchValue) {
@@ -82,25 +83,36 @@ function Search() {
     getMovieRequest(searchValue);
   }, [searchValue]);
 console.log(movies);
+
+const  handleWatchClick=(movie)=>{
+  const newWatchLater=[...watchLaterMovies,movie];
+setWatchLaterMovies(newWatchLater);
+}
+
   return (
-    <div className="row">
-    <SearchMovieName headingSearch='Movies' />
+<>
+    <div className="rowSearch">
+    <SearchMovieName headingSearch='Dont Worry If You Are Picky, Search Here' />
      <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}  />
 
-      <Slider {...settings} className="row__cards">
+      <Slider {...settings} className="rowSearch__cardsSearch">
         {movies.map((movie, index) => (
-          <div>
+          <div className="rowSearch-container">
             <img
               key={movie.id}
-            className="row__card"
+            className="rowSearch__cardSearch"
             src={movie.Poster}
             alt="movie"
-            onClick={() => handleSearchMovieClick(movie)
-            }
+            // onClick={() => handleSearchMovieClick(movie)}
+            onClick={() => handleWatchClick(movie)}
             />
+            <div className="rowSearch__overlay">
+              <WatchLater />
+            </div>
           </div>
         ))}
-      </Slider>
+
+        </Slider>
       {trailerUrl && (
         <Youtube
           videoId={trailerUrl}
@@ -108,8 +120,35 @@ console.log(movies);
           onReady={_onReady}
           onStateChange={_onStateChange}
         />
+
       )}
-    </div>
+
+      </div>
+          <div className="rowSearch">
+    <SearchMovieName headingSearch='Watch Later' />
+
+      <Slider {...settings} className="rowSearch__cardsSearch">
+        {watchLaterMovies.map((watchLaterMovies, index) => (
+          <div className="rowSearch-container">
+            <img
+              key={watchLaterMovies.id}
+            className="rowSearch__cardSearch"
+            src={watchLaterMovies.Poster}
+            alt="movie"
+            // onClick={() => handleSearchMovieClick(movie)}
+            // onClick={() => handleWatchClick(movie)}
+            />
+            {/* <div className="row__overlay">
+              <WatchLater />
+            </div> */}
+          </div>
+        ))}
+      </Slider>
+
+
+      </div>
+</>
+
   );
 }
 
