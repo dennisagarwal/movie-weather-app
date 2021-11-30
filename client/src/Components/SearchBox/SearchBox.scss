@@ -1,9 +1,14 @@
-searchBox__input{
-  position: fixed;
-  right: 10rem;
+.searchBox{
+  padding: 1rem;
+  display: inline-block;
+  vertical-align:middle;
+  // margin-left: 1rem;
+&__input{
+
   width:20rem;
   border: none;
-
-  height: 2rem;
-  object-fit: contain;
-}
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  // object-fit: contain;
+}}

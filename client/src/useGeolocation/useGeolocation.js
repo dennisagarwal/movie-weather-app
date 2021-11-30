@@ -37,5 +37,12 @@ export const useGeolocation = () => {
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
   }, []);
   console.log(location)
-  return location;
+  return (
+    <>
+    {location.coords.latitude && location.coords.longitude ?
+    <img src={``}   />}
+      :null
+
+    </>
+  );
 };

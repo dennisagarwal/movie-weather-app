@@ -4,7 +4,7 @@ import "./SearchMovieName.scss";
 const SearchMovieName = ({headingSearch}) => {
 	return (
 		<div className='headingSearch'>
-			<h1>{headingSearch}</h1>
+			<h2>{headingSearch}</h2>
 		</div>
 	);
 };

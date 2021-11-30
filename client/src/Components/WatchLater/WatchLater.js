@@ -1,10 +1,11 @@
 import React from 'react'
+import "./WatchLater.scss"
 
 function WatchLater() {
   return (
-    <div>
-      <h6>Watch Later</h6>
-    </div>
+
+      <h6 className="watchLater__heading">Watch Later</h6>
+
   )
 }
 

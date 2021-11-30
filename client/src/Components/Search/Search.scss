@@ -1,46 +1,51 @@
-.rowSearch{
-  margin-left:1.5rem;
-  color:white;
-&__cardsSearch{
-  // width:100%;
-  display:flex;
-  flex-direction: row;
-  padding:1rem;
-  overflow-y: hidden;
-  overflow-x: scroll;
-}
-::-webkit-scrollbar{
-  display:none;
-}
-// &__container:hover .overlay {
-// 	opacity: 1;
-// }
-// &__overlay{
-//   z-index: 1;
-// 	position: absolute;
-// 	background: rgba(0, 0, 0, 0.8);
-// 	width: 100%;
-// 	transition: 0.5s ease;
-// 	opacity: 0;
-// 	bottom: 0;
-// 	font-size: 20px;
-// 	padding: 20px;
-// 	text-align: center;
-// }
-
-
-  &__cardSearch{
+.rowSearch {
+  margin-left: 1.5rem;
+  color: white;
+  // height:17rem;
+  &__cards {
     width:100%;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  &__container:hover .overlay {
+    opacity: 1;
+    position: relative;
+    z-index: 100;
+  }
+  &__overlay {
+    color: red;
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    width: 30%;
+    height: 20%;
+    transition: 0.5s ease;
+    opacity: 1;
+    bottom: 0;
+    font-size: 20px;
+    margin-left: 1.5rem;
+    // text-align: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+  }
+  &__card {
+    width: 100%;
     object-fit: contain;
     max-height: 10rem;
-    margin-right:0.5rem;
-
+    margin-right: 0.5rem;
     transition: transfrom 1000ms;
     border-radius: 0.5rem;
-   }
-
-}
-.rowSearch__cardSearch:hover{
-  transform:scale(1.2);
-  border-radius: 0.5rem;
   }
+}
+.row__card:hover {
+  transform: scale(1.2);
+  border-radius: 0.5rem;
+}

@@ -3,7 +3,7 @@ import Row from './Components/Row/Row';
 import Hero from './Components/Hero/Hero';
 import NavBar from './Components/NavBar/NavBar';
 import requests from './requests';
-import { useGeolocation } from './Components/useGeolocation/useGeolocation';
+import { useGeolocation } from './useGeolocation/useGeolocation';
 import Search from './Components/Search/Search';
 import WatchLater from './Components/WatchLater/WatchLater';
 // import { useState } from 'react';
@@ -26,7 +26,6 @@ function App() {
     <Row heading="Comedy Movies" requestUrl={requests.requestComedyMovies}/>
     <Row heading="Documentories" requestUrl={requests.requestDocumentaries}/>
     <Search  />
-<h1>Hello World</h1>
 <p>location.loaded? JSON.stringify(location):"location not available(</p>
     </div>
   );
