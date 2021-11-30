@@ -1,48 +1,39 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+const weather_API_key = "0858318a4ecc5f724139b463348ce24e";
+//reference : https://www.youtube.com/watch?v=VK9F8BWrOgY
 
-export const useGeolocation = () => {
-  const [location, setLocation] = useState({
-    loaded: false,
-    coordinated: { lat: "", lng: "" },
-  });
-  const onSuccess = (location) => {
-    setLocation({
-      loaded: true,
-      coordinates: {
-        lat: location.coords.latitude,
-        lng: location.coords.longitude,
-      },
-    });
-  };
-  const onError = (error) => {
-    setLocation({ loaded: true, error });
-  };
-  useEffect(() => {
-    if (!("geolocation" in navigator)) {
-      onError({
-        code: 0,
-        message: "Geolocation not supported",
+const findMyState = () => {
+  const success = (position) => {
+    // console.log(position);
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    // console.log(latitude + "  " + longitude);
+
+    //browser geo location API to get the city
+    const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
+    fetch(geoApiUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        // console.log(data.city, data.locality);
+        const city = data.city;
+        console.log(city);
       });
-      // setLocation((state) => ({
-      //   ...state,
-      //   loaded: true,
-      //   error: {
-      //     code: 0,
-      //     message: "Geolocation not availabe",
-      //   },
-      // }));
-    }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-  }, []);
-  console.log(location)
-  return (
-    <>
-    {location.coords.latitude && location.coords.longitude ?
-    <img src={``}   />}
-      :null
-
-    </>
-  );
+    //weather API to get the weather
+    const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=0858318a4ecc5f724139b463348ce24e&units=metric`;
+    fetch(weatherApiUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        // console.log(data.weather[0].main);
+        const weather = data.weather[0].main;
+        console.log(weather);
+      });
+  };
+  const error = () => {
+    "unable to retreive your location";
+  };
+  navigator.geolocation.getCurrentPosition(success, error);
 };
+// findMyState();
+
+export default findMyState();

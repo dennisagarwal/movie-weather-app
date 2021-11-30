@@ -4,7 +4,6 @@ import logo from "../../assets/logo/LogoMakr.png";
 import userIcon from "../../assets/logo/userLogo.png";
 import { useEffect } from "react";
 import { useState } from "react";
-import Search from "../Search/Search";
 
 
 function NavBar() {

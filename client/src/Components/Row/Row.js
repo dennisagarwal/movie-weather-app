@@ -33,7 +33,7 @@ function Row({ heading, requestUrl }) {
     getRequest();
   }, [requestUrl]);
 
-  console.log(movies);
+  // console.log(movies);
   let settings = {
     dots: true,
     infinite: true,
