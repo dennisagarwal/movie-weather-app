@@ -1,7 +1,8 @@
 const weather_API_key = "0858318a4ecc5f724139b463348ce24e";
 //reference : https://www.youtube.com/watch?v=VK9F8BWrOgY
 
-const findMyState = () => {
+const UseGeolocation = () => {
+
   const success = (position) => {
     // console.log(position);
     const latitude = position.coords.latitude;
@@ -34,6 +35,5 @@ const findMyState = () => {
   };
   navigator.geolocation.getCurrentPosition(success, error);
 };
-// findMyState();
 
-export default findMyState();
+export default UseGeolocation;

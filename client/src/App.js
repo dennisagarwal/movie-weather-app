@@ -6,7 +6,9 @@ import requests from './requests';
 // import { useGeolocation } from './useGeolocation/useGeolocation';
 import Search from './Components/Search/Search';
 // import WatchLater from './Components/WatchLater/WatchLater';
+import UseGeolocation from './Components/UseGeolocation/UseGeolocation';
 import CityRow from './Components/CityRow/CityRow';
+import WeatherRow from './Components/WeatherRow/WeatherRow'
 // import { useState } from 'react';
 // import { useEffect } from 'react';
 // const API_KEY = "e0cf5e21ab86909a17aa9ca1c8c7a5b4";
@@ -26,7 +28,8 @@ function App() {
     <Row heading="Romantic Movies" requestUrl={requests.requestRomanceMovies}/>
     <Row heading="Comedy Movies" requestUrl={requests.requestComedyMovies}/>
     <Row heading="Documentories" requestUrl={requests.requestDocumentaries}/>
-    <CityRow heading="Weather"/>
+    <CityRow heading="City"/>
+    <WeatherRow heading="Weather"/>
     <Search  />
 <p>location.loaded? JSON.stringify(location):"location not available(</p>
     </div>
