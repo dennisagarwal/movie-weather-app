@@ -20,6 +20,7 @@
     "react-youtube": "^7.13.1",
     "sass": "^1.43.5",
     "slick-carousel": "^1.8.1",
+    "use-sound": "^4.0.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

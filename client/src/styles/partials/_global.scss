@@ -1,13 +1,11 @@
-@use './variables' as *;
-@use "./reset";
-@use "./setup";
-
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
-
-body {
-    font-family: $font;
+@font-face {
+    font-family: "Titillium Web";
+src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
 }
 
-ul {
-    list-style: none;
-}
+@font-face {
+    font-family: "Monkey";
+    src: url("https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap");
+  }
+
+

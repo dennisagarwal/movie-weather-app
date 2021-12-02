@@ -11,7 +11,7 @@ function ModalButton() {
   }
   return (
     <div className="modal">
-      <button className="modal__Button" onClick={openModal}>Click Me!</button>
+      <button className="modal__Button" onClick={openModal} >Click Me!</button>
       <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
   )

@@ -13,7 +13,7 @@ import WeatherRow from './Components/WeatherRow/WeatherRow'
 import AuthButton from './Components/AuthButton/AuthButton';
 import LoginPage from './Components/LoginPage/LoginPage';
 import ModalButton from './Components/ModalButton/ModalButton';
-
+import Music from './Components/Music/Music';
 // import { useState } from 'react';
 // import { useEffect } from 'react';
 // const API_KEY = "e0cf5e21ab86909a17aa9ca1c8c7a5b4";

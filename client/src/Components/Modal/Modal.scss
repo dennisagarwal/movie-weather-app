@@ -1,28 +1,57 @@
-@import url('<link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">');
+@use "../../styles/partials/global";
 
-.modalPoster{
+.modalPoster {
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
-  bottom: 2rem;
-  // background-color:rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   &__content {
     display: flex;
-      padding: toRem(12) toRem(36) 0 toRem(36);
-      margin-top: toRem(240);
-      height: 80%;
-      justify-content: center;
-      background-color: white;
-      font-size: 4rem;
-      font-family:'Happy Monkey', cursive;
-      background-image: url("../../assets/modal-bg-image/modal-bg-gif.gif");
-      width: 60%;
-      align-items: center;
-      justify-content: center;
-    }
+    padding: 4rem;
+    height: 50%;
+    justify-content: center;
+    font-size: 4rem;
+    line-height: 1.5;
+    font-family: "Monkey";
+    font-weight: 600;
+    background-image: url("../../assets/modal-bg-image/modal-bg-gif.gif");
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0.8;
   }
+  &__close {
+    position: fixed;
+    top: 10rem;
+    right: 22rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 50%;
+  }
+  &__music {
+    position: fixed;
+    top: 38rem;
+    left: 32rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 10%;
+    background-color:orange;
+  }
+  &__pause {
+    position: fixed;
+    top: 38rem;
+    right: 32rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 10%;
+    color: black;
+    background-color:lightblue;
+  }
+}
