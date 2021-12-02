@@ -1,0 +1,21 @@
+.modal{
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+&__Button{
+  width:8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-right: 1rem;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgba(5, 5, 5, 0.5);
+  font-weight: 600;
+}}
