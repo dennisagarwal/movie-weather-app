@@ -5,6 +5,7 @@ import logo from "../../assets/logo/LogoMakr.png";
 import "./SignUpScreen.scss";
 import { useRef, useState } from "react";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
+import { Link, useHistory } from "react-router-dom";
 
 
 function SignUpScreen() {
@@ -14,6 +15,7 @@ function SignUpScreen() {
   const {signup} = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const history= useHistory()
 
   async function register(e) {
     e.preventDefault();
@@ -24,31 +26,14 @@ function SignUpScreen() {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      history.push("/");
     } catch {
       setError("Failed to create Error");
       setLoading(false);
     }
-    // auth.createUserWithEmailAndPassword(
-    //   emailRef.current.value,
-    //   passwordRef.current.value,
-    // ).then((authUser)=>{
-    //   console.log(authUser);
-    // })
-    //   .catch((error)=>{
-    //     alert(error.message);
-    //   });
+
   }
 
-  // const signIn = (e) => {
-  //   e.preventDefault();
-
-    // auth.signInWithEmailAndPassword(
-    //   emailRef.current.value,
-    //   passwordRef.current.value
-    // ).then((authUser)=>{
-    //   console.log(authUser);
-    // }).catch((error)=>alert(error.message))
-  // };
 
   return (
     <>
@@ -62,6 +47,7 @@ function SignUpScreen() {
             Watch Anywhere.Cancel anytime.
           </h2>
           <h3 className="signUp__body--heading3">Create Your Account</h3>
+
           {error && <div> <p>"danger"</p>(error)</div>}
           <form onSubmit={register} className="signUp__form">
             <h1 className="signUp__body--heading3">Sign Up</h1>
@@ -90,12 +76,12 @@ function SignUpScreen() {
             >
               Sign Up
             </button>
-            <h4 className="signUp__body--heading3">
+            <h3 className="signUp__body--heading3">
               <span className="signUp__body--heading3">
                 Already have an account?{" "}
               </span>
-              <span className="signUp__form--spanlink">Login now.</span>
-            </h4>
+              <Link to="/login">Login now.</Link>
+            </h3>
           </form>
         </div>
       </div>

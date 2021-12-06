@@ -1,9 +1,10 @@
 import "./App.scss";
 import Home from "./Home";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 // import LoginPage from './Components/LoginPage';
 // import PrivateRoute from './Components/PrivateRoute';
 // import AuthButton from './Components/AuthButton';
+
 import { AuthProvider } from "./Components/contexts/AuthContext";
 import SignUpScreen from "./Components/SignupScreen/SignUpScreen";
 import SigninPage from "./Components/SigninPage/SigninPage";
@@ -22,29 +23,19 @@ function App() {
   // }else{
   // }
 
-// })
-// return()=>unsubscribe
-//   },[])
+  // })
+  // return()=>unsubscribe
+  //   },[])
   return (
-
-    <AuthProvider>
-    {/* <div className="app"> */}
-      {/* <Router> */}
-      <SignUpScreen />
-        {/* {!user ? (
-          <SigninPage />
-        ) : (
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-          </Switch>
-        )} */}
-        {/* <Route path="/login" component={SigninPage} />
-              <Route path="/home" component={Home} /> */}
-      {/* </Router> */}
-    {/* </div> */}
-    </AuthProvider>
+    <Router>
+      <AuthProvider>
+      <Switch>
+      <Route exact path="/" component={Home} />
+          <Route path="/signup" component={SignUpScreen} />
+          <Route path="/login" component={SigninPage} />
+      </Switch>
+      </AuthProvider>
+    </Router>
   );
 }
 
