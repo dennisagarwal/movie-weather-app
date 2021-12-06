@@ -1,7 +1,7 @@
 .rowSearch {
   margin-left: 1.5rem;
   color: white;
-  // height:17rem;
+
   &__cards {
     width:100%;
     display: flex;
@@ -9,38 +9,58 @@
     padding: 1rem;
     overflow-y: hidden;
     overflow-x: scroll;
+    justify-content: space-evenly;
+     // width:100%;
+
+  // display:flex;
+  // flex-direction: row;
+  // padding:1rem;
+  // overflow-y: hidden;
+  // overflow-x: scroll;
   }
   ::-webkit-scrollbar {
     display: none;
   }
-  &__container:hover .overlay {
+  &__container {
     opacity: 1;
     position: relative;
-    z-index: 100;
+    // z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__container:hover .overlay {
+    opacity: 1;
+    // position: relative;
+    // z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &__overlay {
+    cursor: pointer;
+    width:100%;
     color: red;
-    z-index: 100;
+    // z-index: 100;
     position: absolute;
     background: rgba(0, 0, 0, 0.8);
-    width: 30%;
-    height: 20%;
-    transition: 0.5s ease;
-    opacity: 1;
+    height: 30%;
+    // transition: 0.5s ease;
+    // opacity: 1;
     bottom: 0;
     font-size: 20px;
-    margin-left: 1.5rem;
     // text-align: center;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
   }
   &__card {
     width: 100%;
     object-fit: contain;
     max-height: 10rem;
-    margin-right: 0.5rem;
+    // margin-right: 0.5rem;
     transition: transfrom 1000ms;
     border-radius: 0.5rem;
   }

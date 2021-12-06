@@ -1,10 +1,11 @@
 import React from "react";
+// import "../Row/Row.scss";
 import "./Search.scss";
 import { useState } from "react";
 import { useEffect } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
 import SearchBox from "../SearchBox/SearchBox";
 import SearchMovieName from "../SearchMovieName/SearchMovieName";
@@ -19,14 +20,14 @@ function Search() {
   const [searchValue, setSearchValue] = useState("");
   const [trailerUrl, setTrailerUrl] = useState("");
 
-  let settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 10,
-    slidesToScroll: 8,
+  // let settings = {
+  //   dots: true,
+  //   infinite: false,
+  //   speed: 500,
+  //   slidesToShow: 10,
+  //   slidesToScroll: 8,
 
-  };
+  // };
   const opts = {
     height: "400",
     width: "100%",
@@ -113,24 +114,27 @@ useEffect(()=>{
       <div className="rowSearch">
         <SearchMovieName headingSearch="Dont Worry If You Are Picky, Search Here" />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-        <Slider {...settings} className="row__cards">
+        {/* <Slider {...settings} className="row__cards"> */}
+        <div  className="rowSearch__cards">
           {movies.map((movie, index) => (
-            <div className="row-container">
+            <div className="rowSearch__container">
               <img
                 key={movie.id}
-                className="row__card"
+                className="rowSearch__card"
                 src={movie.Poster}
                 alt="movie"
-                // onClick={() => handleSearchMovieClick(movie)}
-                onClick={() => handleWatchClick(movie)}
+                onClick={() => handleSearchMovieClick(movie)}
+                // onClick={() => handleWatchClick(movie)}
               />
 
-              <div className="row__overlay">
+              <div className="rowSearch__overlay"
+                onClick={() => handleWatchClick(movie)}
+                >
                 <WatchLater/>
               </div>
             </div>
           ))}
-        </Slider>
+        </div>
         {trailerUrl && (
           <Youtube
             videoId={trailerUrl}
@@ -143,27 +147,31 @@ useEffect(()=>{
       <div className="rowSearch">
         <SearchMovieName headingSearch="Watch Later" />
 
-        <Slider {...settings} className="row__cards">
+        {/* <Slider {...settings} className="row__cards"> */}
+        <div  className="rowSearch__cards">
           {watchLaterMovies.map((watchLaterMovie, index) => (
 
-            <div className="row-container">
+            <div className="rowSearch__container">
               <img
-                className="row__card"
+                className="rowSearch__card"
                 key={watchLaterMovie.id}
                 src={watchLaterMovie.Poster}
                 alt="movie"
-                onClick={() => handleRemoveWatchClick(watchLaterMovie)}
-                // onClick={() => handleWatchClick(movie)}
+                onClick={() => handleWatchClick(watchLaterMovie)}
               />
-              <div className="rowSearch__overlay">
+              <div className="rowSearch__overlay"
+              onClick={() => handleRemoveWatchClick(watchLaterMovie)}
+>
                 <WatchLater />
               </div>
             </div>
           ))}
-        </Slider>
+        </div>
       </div>
     </>
   );
 }
 
 export default Search;
+
+//https://reactjsexample.com/a-react-hook-for-playing-sound-effects/

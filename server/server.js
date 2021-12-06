@@ -15,7 +15,7 @@ const logger = require('morgan');
 
 // create express app and also allow for app PORT to be optionally specified by a variable
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 // instantiate Passport and Github Strategy
 const passport = require('passport');

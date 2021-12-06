@@ -11,7 +11,6 @@ import SearchMovieName from "../SearchMovieName/SearchMovieName";
 import Youtube from "react-youtube";
 import movieTrailer from "movie-trailer";
 // import WatchLater from "../WatchLater/WatchLater";
-import UseGeolocation from "../UseGeolocation/UseGeolocation";
 
 //weather and geoLocation Api
 const weather_API_key = "0858318a4ecc5f724139b463348ce24e";
