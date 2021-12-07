@@ -16,6 +16,14 @@
     width: 10rem;
     object-fit: contain;
   }
+    &__qrlogo {
+    position: absolute;
+    right: 1.125rem;
+    top: 2.125rem;
+    z-index: 11;
+    width: 10rem;
+    object-fit: contain;
+  }
   &__button {
     display: flex;
     position: fixed;

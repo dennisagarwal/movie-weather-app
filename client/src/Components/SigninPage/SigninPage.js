@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./SigninPage.scss";
 import { useRef, useState } from "react";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
+import qrCode from "../../assets/qr-code/Deepak_Agarwal.svg";
 
 function SigninPage() {
   const emailRef = useRef();
@@ -40,10 +41,7 @@ function SigninPage() {
           </h2>
           <h3 className="signin__body--heading3">Welcome to your Account</h3>
 
-          {error && (
-            <div>{error}
-            </div>
-          )}
+          {error && <div>{error}</div>}
           <form onSubmit={register} className="signin__form">
             <h1 className="signin__form--heading1">Log In</h1>
             <input
@@ -68,13 +66,18 @@ function SigninPage() {
             </button>
             <h3 className="signin__body--heading3">
               <span className="signin__form--heading3">Need An Account ?</span>
-              <Link to="/signup" className="signin__form--link">Click here to Sign Up.</Link>
+              <Link to="/signup" className="signin__form--link">
+                Click here to Sign Up.
+              </Link>
             </h3>
             <h3 className="signin__body--heading3">
-              <Link className="signin__form--link" to="/forgotpassword">Forgot Password?</Link>
+              <Link className="signin__form--link" to="/forgotpassword">
+                Forgot Password?
+              </Link>
             </h3>
           </form>
         </div>
+        <img className="signin__qrlogo" src={qrCode} alt="image logo" />
       </div>
     </>
   );

@@ -1,9 +1,10 @@
 import React from "react";
 import logo from "../../assets/logo/LogoMakr.png";
-import "./SignUpScreen.scss"
+import "./SignUpScreen.scss";
 import { useRef, useState } from "react";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import qrCode from "../../assets/qr-code/Deepak_Agarwal.svg";
 
 function SignUpScreen() {
   const emailRef = useRef();
@@ -83,6 +84,7 @@ function SignUpScreen() {
             </h3>
           </form>
         </div>
+        <img className="signin__qrlogo" src={qrCode} alt="image logo" />
       </div>
     </>
   );

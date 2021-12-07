@@ -30,9 +30,9 @@ function Modal({ showModal, setShowModal }) {
           </button>
           <button   className="modalPoster__music" onClick={() => play()}> Play Me 🎵</button>
           <button   className="modalPoster__pause" onClick={() => stop()}> Stop Me ✋ </button>
-          {/* <Music /> */}
         </div>
       ) : null}
+
     </div>
   );
 }
