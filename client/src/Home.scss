@@ -5,12 +5,5 @@
 
 .Home{
   background-color: #111;
-  &__qrlogo {
-    position:absolute;
-    right: 3.125rem;
-    top: 4.125rem;
-    z-index: 1;
-    width: 10rem;
-    object-fit: contain;
-  }
+
 }

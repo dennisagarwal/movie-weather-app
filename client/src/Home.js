@@ -8,14 +8,11 @@ import Search from "./Components/Search/Search";
 import CityRow from "./Components/CityRow/CityRow";
 import WeatherRow from "./Components/WeatherRow/WeatherRow";
 import ModalButton from "./Components/ModalButton/ModalButton";
-import qrCode from "./assets/qr-code/Deepak_Agarwal.svg";
 
 
 function Home() {
   return (
     <div className="Home">
-          <img className="Home__qrlogo" src={qrCode} alt="image logo" />
-
       <NavBar />
       <Hero />
       <Row heading="Trending Now" requestUrl={requests.requestTrending} />

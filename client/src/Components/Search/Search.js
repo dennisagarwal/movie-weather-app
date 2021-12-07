@@ -147,7 +147,7 @@ useEffect(()=>{
         <SearchMovieName headingSearch="Watch Later" />
 
         <div  className="rowSearch__cards">
-          {watchLaterMovies.map((watchLaterMovie, index) => (
+          {watchLaterMovies && watchLaterMovies.map((watchLaterMovie, index) => (
 
             <div className="rowSearch__container">
               <img
