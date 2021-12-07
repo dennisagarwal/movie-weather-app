@@ -115,7 +115,6 @@ useEffect(()=>{
       <div className="rowSearch">
         <SearchMovieName headingSearch="Dont Worry If You Are Picky, Search Here" />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-        {/* <Slider {...settings} className="row__cards"> */}
         <div  className="rowSearch__cards">
           {movies.map((movie, index) => (
             <div className="rowSearch__container">
@@ -147,7 +146,6 @@ useEffect(()=>{
       <div className="rowSearch">
         <SearchMovieName headingSearch="Watch Later" />
 
-        {/* <Slider {...settings} className="row__cards"> */}
         <div  className="rowSearch__cards">
           {watchLaterMovies.map((watchLaterMovie, index) => (
 

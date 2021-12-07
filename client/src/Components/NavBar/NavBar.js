@@ -30,7 +30,6 @@ function NavBar() {
       {error && <p>"Logout Failed"</p>}
       <Link to="/updateprofile">
       <p className="NavBar__text">{currentUser.email}</p>
-      {/* <Link to="/updateprofile"> */}
         <img className="NavBar__userIcon" src={userIcon} alt="user icon" />
       </Link>
       <button className="NavBar__button" onClick={handleLogOut}>
