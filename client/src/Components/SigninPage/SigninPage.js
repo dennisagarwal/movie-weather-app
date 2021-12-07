@@ -71,7 +71,7 @@ function SigninPage() {
               <Link to="/signup" className="signin__form--link">Click here to Sign Up.</Link>
             </h3>
             <h3 className="signin__body--heading3">
-              <Link className="signin__form--link" to="/forgetpassword">Forgot Password?</Link>
+              <Link className="signin__form--link" to="/forgotpassword">Forgot Password?</Link>
             </h3>
           </form>
         </div>
