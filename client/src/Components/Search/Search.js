@@ -1,11 +1,7 @@
 import React from "react";
-// import "../Row/Row.scss";
 import "./Search.scss";
 import { useState } from "react";
 import { useEffect } from "react";
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
 import SearchBox from "../SearchBox/SearchBox";
 import SearchMovieName from "../SearchMovieName/SearchMovieName";
@@ -69,7 +65,7 @@ function Search() {
     //fetching request is bringing the data from the url in axios.get()
     async function getMovieRequest(searchValue) {
       const waitToLoad = await axios.get(
-        `http://www.omdbapi.com/?s=${searchValue}&apikey=edf3f73f&page=1`
+        `https://www.omdbapi.com/?s=${searchValue}&apikey=edf3f73f&page=1`
       );
       //`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}` is one example
       if (waitToLoad.data.Search) {
