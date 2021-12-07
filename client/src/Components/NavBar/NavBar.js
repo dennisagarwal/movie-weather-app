@@ -4,28 +4,37 @@ import logo from "../../assets/logo/LogoMakr.png";
 import userIcon from "../../assets/logo/userLogo.png";
 import { useEffect } from "react";
 import { useState } from "react";
-
+import { useAuth } from "../contexts/AuthContext";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function NavBar() {
   const [show, handleShow] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        handleShow(true);
-      } else handleShow(false);
-    });
-    return () => {
-      window.removeEventListener("scroll");
-    };
-  }, []);
+  const [error, setError] = useState("");
+  const { currentUser, logout } = useAuth();
+  const history = useHistory();
 
-  // const[searchTerm,setSearchTerm]=useState('');
+  async function handleLogOut() {
+    setError("");
+    try {
+      await logout();
+      history.pushState("/login");
+    } catch {
+      setError("Failed to logout");
+    }
+  }
 
   return (
     <div className={`NavBar ${show && "NavBar__change"}`}>
       <img className="NavBar__logo" src={logo} alt="image logo" />
-
-      <img className="NavBar__userIcon" src={userIcon} alt="user icon" />
+      {error && <p>"Logout Failed"</p>}
+      <Link to="/updateprofile">
+      <p className="NavBar__text">{currentUser.email}</p>
+        <img className="NavBar__userIcon" src={userIcon} alt="user icon" />
+      </Link>
+      <button className="NavBar__button" onClick={handleLogOut}>
+        Log Out
+      </button>
     </div>
   );
 }

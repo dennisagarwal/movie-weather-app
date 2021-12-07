@@ -7,16 +7,14 @@ import requests from "./requests";
 import Search from "./Components/Search/Search";
 import CityRow from "./Components/CityRow/CityRow";
 import WeatherRow from "./Components/WeatherRow/WeatherRow";
-// import AuthButton from './Components/AuthButton/AuthButton';
-// import LoginPage from './Components/LoginPage/LoginPage';
 import ModalButton from "./Components/ModalButton/ModalButton";
-// export const API_URL = 'http://localhost:5000';
-function Home() {
-  // const location=useGeolocation()
+import qrCode from "./assets/qr-code/Deepak_Agarwal.svg";
 
+
+function Home() {
   return (
-    // <Router>
     <div className="Home">
+          <img className="Home__qrlogo" src={qrCode} alt="image logo" />
 
       <NavBar />
       <Hero />

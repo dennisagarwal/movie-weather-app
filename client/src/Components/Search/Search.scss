@@ -10,13 +10,7 @@
     overflow-y: hidden;
     overflow-x: scroll;
     justify-content: space-evenly;
-     // width:100%;
 
-  // display:flex;
-  // flex-direction: row;
-  // padding:1rem;
-  // overflow-y: hidden;
-  // overflow-x: scroll;
   }
   ::-webkit-scrollbar {
     display: none;
@@ -24,7 +18,6 @@
   &__container {
     opacity: 1;
     position: relative;
-    // z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,11 +39,8 @@
     position: absolute;
     background: rgba(0, 0, 0, 0.8);
     height: 30%;
-    // transition: 0.5s ease;
-    // opacity: 1;
     bottom: 0;
-    font-size: 20px;
-    // text-align: center;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;

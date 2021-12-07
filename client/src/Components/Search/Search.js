@@ -12,6 +12,7 @@ import SearchMovieName from "../SearchMovieName/SearchMovieName";
 import Youtube from "react-youtube";
 import movieTrailer from "movie-trailer";
 import WatchLater from "../WatchLater/WatchLater";
+import AlreadyWatched from "../AlreadyWatched/AlreadyWatched";
 const API_KeyOMDb = "edf3f73f";
 
 function Search() {
@@ -114,7 +115,6 @@ useEffect(()=>{
       <div className="rowSearch">
         <SearchMovieName headingSearch="Dont Worry If You Are Picky, Search Here" />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-        {/* <Slider {...settings} className="row__cards"> */}
         <div  className="rowSearch__cards">
           {movies.map((movie, index) => (
             <div className="rowSearch__container">
@@ -124,7 +124,6 @@ useEffect(()=>{
                 src={movie.Poster}
                 alt="movie"
                 onClick={() => handleSearchMovieClick(movie)}
-                // onClick={() => handleWatchClick(movie)}
               />
 
               <div className="rowSearch__overlay"
@@ -147,7 +146,6 @@ useEffect(()=>{
       <div className="rowSearch">
         <SearchMovieName headingSearch="Watch Later" />
 
-        {/* <Slider {...settings} className="row__cards"> */}
         <div  className="rowSearch__cards">
           {watchLaterMovies.map((watchLaterMovie, index) => (
 
@@ -161,8 +159,7 @@ useEffect(()=>{
               />
               <div className="rowSearch__overlay"
               onClick={() => handleRemoveWatchClick(watchLaterMovie)}
->
-                <WatchLater />
+>                <AlreadyWatched />
               </div>
             </div>
           ))}

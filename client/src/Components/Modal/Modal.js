@@ -4,7 +4,6 @@ import { useSpring, animated } from "react-spring";
 import { useState } from "react";
 import "./Modal.scss";
 import { MdClose } from "react-icons/md";
-// import Music from "../Music/Music";
 import useSound from 'use-sound';
 import jingleBell from '../../assets/music/jingleBell.mp3';
 
@@ -15,11 +14,11 @@ function Modal({ showModal, setShowModal }) {
       {showModal ? (
         <div className="modalPoster">
           <div className="modalPoster__content">
-            {/* {" "} */}
             <div className="modalPoster__content--text">
-           <p> "Special Thanks</p>
-           Jim Bennett, Anvit Srivastav, Atom van der Merwe &
-            Betty Kassa"
+           <p className="modalPoster__content--text1"> "Special Thanks Jim Bennett,</p>
+           <p className="modalPoster__content--text1"> Anvit Srivastav, Atom van der Merwe &  Betty Kassa"</p>
+
+            <p> Happy New Year And Merry Christmas to Everyone</p>
             <p> 🙌</p>
             </div>
           </div>
@@ -31,9 +30,9 @@ function Modal({ showModal, setShowModal }) {
           </button>
           <button   className="modalPoster__music" onClick={() => play()}> Play Me 🎵</button>
           <button   className="modalPoster__pause" onClick={() => stop()}> Stop Me ✋ </button>
-          {/* <Music /> */}
         </div>
       ) : null}
+
     </div>
   );
 }

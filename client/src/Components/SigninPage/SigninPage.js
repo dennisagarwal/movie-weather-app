@@ -1,42 +1,86 @@
-import React, { Component } from 'react';
-import logo from "../../assets/logo/LogoMakr.png"
-import { useState } from 'react';
-import "./SigninPage.scss"
-import Login from '../LoginPage/LoginPage';
-import SignUpScreen from '../SignupScreen/SignUpScreen';
+import React from "react";
+import logo from "../../assets/logo/LogoMakr.png";
+import { Link, useHistory } from "react-router-dom";
+import "./SigninPage.scss";
+import { useRef, useState } from "react";
+import { AuthProvider, useAuth } from "../contexts/AuthContext";
+import qrCode from "../../assets/qr-code/Deepak_Agarwal.svg";
 
-function SigninPage(){
-  const [signIn, setSignIn] = useState(false);
-// class SigninPage extends Component {
+function SigninPage() {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { login } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
-    return (
+  async function register(e) {
+    e.preventDefault();
 
+    try {
+      setError("");
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      history.push("/");
+    } catch {
+      setError("Failed to sign in");
+      setLoading(false);
+    }
+  }
+
+  return (
+    <>
       <div className="signin">
-       {/* <Login onClick={this.login} /> */}
-     <img className="signin__logo" src={logo} alt="image logo" />
-        {/* <p>You must log in to view the page</p> */}
-        <button onClick={()=>setSignIn(true)} className="signin__button" >Sign in </button>
+        <img className="signin__logo" src={logo} alt="image logo" />
         <div className="signin__gradient"></div>
         <div className="signin__body">
-        {signIn?(
-          <SignUpScreen />
-        ):(
-        <>
           <h1 className="signin__body--heading1">Unlimited movies, TV</h1>
           <h1 className="signin__body--heading1">shows and more.</h1>
-        <h2 className="signin__body--heading2">Watch Anywhere.Cancel anytime.</h2>
-        <h3 className="signin__body--heading3">Ready to watch?Enter your email to create or restart your membership</h3>
-        <div className="signin__detail">
-        <form className="signin__detail--form">
-          <input className="signin__detail--forminput" type="email" placeholder="Email Address" />
-          <button onClick={()=>setSignIn(true)} className="signin__detail--formbutton">GET STARTED</button>
-        </form>
+          <h2 className="signin__body--heading2">
+            Watch Anywhere.Cancel anytime.
+          </h2>
+          <h3 className="signin__body--heading3">Welcome to your Account</h3>
+
+          {error && <div>{error}</div>}
+          <form onSubmit={register} className="signin__form">
+            <h1 className="signin__form--heading1">Log In</h1>
+            <input
+              ref={emailRef}
+              className="signin__detail--forminput"
+              placeholder="Email"
+              type="email"
+            />
+            <input
+              ref={passwordRef}
+              className="signin__detail--forminput"
+              placeholder="Password"
+              type="password"
+            />
+
+            <button
+              className="signin__detail--formbutton"
+              disabled={loading}
+              type="submit"
+            >
+              Log In
+            </button>
+            <h3 className="signin__body--heading3">
+              <span className="signin__form--heading3">Need An Account ?</span>
+              <Link to="/signup" className="signin__form--link">
+                Click here to Sign Up.
+              </Link>
+            </h3>
+            <h3 className="signin__body--heading3">
+              <Link className="signin__form--link" to="/forgotpassword">
+                Forgot Password?
+              </Link>
+            </h3>
+          </form>
         </div>
-        </>
-        )}
-        </div>
+        <img className="signin__qrlogo" src={qrCode} alt="image logo" />
       </div>
-    );
-  }
+    </>
+  );
+}
 
 export default SigninPage;

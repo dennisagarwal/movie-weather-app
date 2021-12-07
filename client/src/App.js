@@ -1,29 +1,28 @@
-import './App.scss';
-import Home from './Home'
-// import LoginPage from './Components/LoginPage';
-// import PrivateRoute from './Components/PrivateRoute';
-// import AuthButton from './Components/AuthButton';
-import SigninPage from './Components/SigninPage/SigninPage';
-import { BrowserRouter as Router,Switch, Route, Link } from 'react-router-dom';
-// import requests from './requests';
-// export const API_URL = 'http://localhost:5000';
+import "./App.scss";
+import Home from "./Home";
+import PrivateRoute from './Components/PrivateRoute';
+import { AuthProvider } from "./Components/contexts/AuthContext";
+import SignUpScreen from "./Components/SignupScreen/SignUpScreen";
+import SigninPage from "./Components/SigninPage/SigninPage";
+import ForgotPassword from "./Components/ForgotPassword/ForgotPassword"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import UpdateProfile from "./Components/UpdateProfile/UpdateProfile";
+
 function App() {
 
-
   return (
-     <Router>
-      {/* <AuthButton /> */}
-      {/* <li>
-              <Link to="/Home">Home Page</Link>
-            </li> */}
-            <Switch>
-      {/* <Route path="/login" component={LoginPage} /> */}
-        <Route path="/login" component={SigninPage} />
-              <Route path="/home" component={Home} />
-      {/* <PrivateRoute path="/Home" component={Home} /> */}
-      </Switch>
+    <Router>
+      <AuthProvider>
+      <Switch>
+      <PrivateRoute exact path="/" component={Home} />
+      <PrivateRoute path="/updateprofile" component={UpdateProfile} />
+          <Route path="/signup" component={SignUpScreen} />
+          <Route path="/login" component={SigninPage} />
+          <Route path="/forgotpassword" component={ForgotPassword} />
 
-     </Router>
+      </Switch>
+      </AuthProvider>
+    </Router>
   );
 }
 
