@@ -20,7 +20,7 @@
 ```
 $ npm install
 ```
-### Launch the application
+### Launch application
 
 ```
 $ npm start
