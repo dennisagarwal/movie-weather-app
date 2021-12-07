@@ -20,6 +20,9 @@
 ```
 $ npm install
 ```
+### Launch application
 
-*__Make sure to install npm in both the client folder__*
+```
+$ npm start
+```
 
