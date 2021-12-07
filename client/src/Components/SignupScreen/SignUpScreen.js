@@ -1,19 +1,18 @@
 import React from "react";
 import logo from "../../assets/logo/LogoMakr.png";
-import "./SignUpScreen.scss";
+import "./SignUpScreen.scss"
 import { useRef, useState } from "react";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
-
 
 function SignUpScreen() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const {signup} = useAuth();
+  const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const history= useHistory()
+  const history = useHistory();
 
   async function register(e) {
     e.preventDefault();
@@ -29,9 +28,7 @@ function SignUpScreen() {
       setError("Failed to create Error");
       setLoading(false);
     }
-
   }
-
 
   return (
     <>
@@ -48,7 +45,7 @@ function SignUpScreen() {
 
           {error && <div>{error}</div>}
           <form onSubmit={register} className="signUp__form">
-            <h1 className="signUp__body--heading3">Sign Up</h1>
+            <h1 className="signUp__form--heading1">Sign Up</h1>
             <input
               ref={emailRef}
               className="signUp__detail--forminput"
@@ -75,10 +72,14 @@ function SignUpScreen() {
               Sign Up
             </button>
             <h3 className="signUp__body--heading3">
-              <span className="signUp__body--heading3">
+              <span className="signUp__form--heading3">
                 Already have an account?{" "}
               </span>
-              <Link to="/login">Login now.</Link>
+            </h3>
+            <h3 className="signin__body--heading3">
+              <Link to="/login" className="signin__form--link">
+                Login now.
+              </Link>
             </h3>
           </form>
         </div>

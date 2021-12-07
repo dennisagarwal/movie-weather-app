@@ -111,7 +111,7 @@
   }
   &__detail {
     &--forminput {
-      padding: 0.64rem;
+      padding: 0.64rem ;
       margin: 0.64rem;
       outline-width: 0;
       height: 1.875rem;
@@ -125,13 +125,15 @@
     &--formbutton {
       padding: 1.15rem;
       margin: 0.64rem;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #fff;
+      max-width: 37.5rem;
       background-color: #e50914;
       border: none;
       font-weight: 600;
       cursor: pointer;
-      width: 96%;
+      width: 95%;
+
     }
   }
 }
