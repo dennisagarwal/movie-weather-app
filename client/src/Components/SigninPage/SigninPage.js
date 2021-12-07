@@ -42,9 +42,7 @@ function SigninPage() {
           <h3 className="signin__body--heading3">Welcome to your Account</h3>
 
           {error && (
-            <div>
-              {" "}
-              <p>"danger"</p>(error)
+            <div>{error}
             </div>
           )}
           <form onSubmit={register} className="signUp__form">
@@ -69,10 +67,13 @@ function SigninPage() {
             >
               Log In
             </button>
-            <h4 className="signin__body--heading3">
+            <h3 className="signin__body--heading3">
               <span className="signin__body--heading3">Need An Account?</span>
               <Link to="/signup">Click here to Sign Up.</Link>
-            </h4>
+            </h3>
+            <h3 className="signin__body--heading3">
+              <Link to="/forgetpassword">Forgot Password?</Link>
+            </h3>
           </form>
         </div>
       </div>

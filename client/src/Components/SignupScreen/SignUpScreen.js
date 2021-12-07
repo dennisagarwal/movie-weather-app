@@ -48,7 +48,7 @@ function SignUpScreen() {
           </h2>
           <h3 className="signUp__body--heading3">Create Your Account</h3>
 
-          {error && <div> <p>"danger"</p>(error)</div>}
+          {error && <div>{error}</div>}
           <form onSubmit={register} className="signUp__form">
             <h1 className="signUp__body--heading3">Sign Up</h1>
             <input

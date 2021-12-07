@@ -33,11 +33,23 @@ opacity: 0.8;
   }
   &__userIcon{
     position: fixed;
-    right: 1.25rem;
+    top:1rem;
+    right: 10rem;
     border: none;
     width:2rem;
     height: 2rem;
     object-fit: contain;
+    z-index:12
+  }
+  &__button{
+    position: fixed;
+    top:1rem;
+    right: 6rem;
+    border: none;
+    width:4rem;
+    height: 2rem;
+    object-fit: contain;
+    z-index:12
   }
 }
 
