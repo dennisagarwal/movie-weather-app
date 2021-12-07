@@ -11,11 +11,7 @@
   z-index: 1;
   height: 2rem;
   opacity: .8;
-&__change{
-  transition-duration: 4000ms;
-background-color: #111;
-opacity: 0.8;
-}
+
   &__logo{
     position: absolute;
     left: 1.125rem;
