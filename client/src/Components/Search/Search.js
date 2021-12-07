@@ -17,14 +17,7 @@ function Search() {
   const [searchValue, setSearchValue] = useState("");
   const [trailerUrl, setTrailerUrl] = useState("");
 
-  // let settings = {
-  //   dots: true,
-  //   infinite: false,
-  //   speed: 500,
-  //   slidesToShow: 10,
-  //   slidesToScroll: 8,
 
-  // };
   const opts = {
     height: "400",
     width: "100%",

@@ -10,7 +10,7 @@ import Youtube from "react-youtube";
 import movieTrailer from "movie-trailer";
 // import Search from "../Search/Search";
 const API_KEY = "e0cf5e21ab86909a17aa9ca1c8c7a5b4";
-const urlStart = "https://image.tmdb.org/t/p/original/";
+const urlStart = `https://image.tmdb.org/t/p/original`;
 
 // function Row(props) {, we are destructuring in the line below
 //passing heading and request  url as props below
@@ -33,7 +33,7 @@ function Row({ heading, requestUrl }) {
     getRequest();
   }, [requestUrl]);
 
-  // console.log(movies);
+  console.log(movies);
   let settings = {
     dots: true,
     infinite: true,
@@ -86,19 +86,18 @@ function Row({ heading, requestUrl }) {
     <div className="row">
       <h2>{heading}</h2>
       <Slider {...settings} className="row__cards">
-        {/* <div  > */}
-
-        {movies.map((movie) => (
+        {movies.length>0 && movies.map((movie) => (
           <img
             key={movie.id}
             className="row__card"
-            src={`${urlStart}${movie.poster_path}`}
+            src={movie.poster_path != null ?`${urlStart}${movie.poster_path}`:"https://image.tmdb.org/t/p/original/lNyLSOKMMeUPr1RsL4KcRuIXwHt.jpg"}
             alt={movie.name}
             onClick={() => handleMovieClick(movie)}
           />
+
         ))}
 
-        {/* </div> */}
+
       </Slider>
       {trailerUrl && (
         <Youtube

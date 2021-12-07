@@ -42,7 +42,7 @@ setCity(res.data.city)
 
        function getMovieCityRequest(city) {
       axios.get(
-        `http://www.omdbapi.com/?s=${city}&apikey=edf3f73f&page=1`
+        `https://www.omdbapi.com/?s=${city}&apikey=edf3f73f&page=1`
       ).then((res)=>{
       console.log(res.data)
       setMovies(res.data.Search)
