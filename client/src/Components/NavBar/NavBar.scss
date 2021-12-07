@@ -17,24 +17,30 @@ background-color: #111;
 opacity: 0.8;
 }
   &__logo{
-    position: fixed;
+    position: absolute;
     left: 1.125rem;
     width:5rem ;
     object-fit: contain;
   }
-  &__input{
-    position: fixed;
-    right: 10rem;
-    width:20rem;
+  &__text{
+    position: absolute;
+    top:1rem;
+    right: 13rem;
     border: none;
-
+    width:20rem;
     height: 2rem;
     object-fit: contain;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #e50914;
+    z-index:12;
+    padding-left: 1rem;
+    font-weight: 600;
   }
   &__userIcon{
-    position: fixed;
+    position: absolute;
     top:1rem;
-    right: 10rem;
+    right: 12rem;
     border: none;
     width:2rem;
     height: 2rem;
@@ -42,14 +48,18 @@ opacity: 0.8;
     z-index:12
   }
   &__button{
-    position: fixed;
+    position: absolute;
     top:1rem;
     right: 6rem;
     border: none;
-    width:4rem;
+    width:6rem;
     height: 2rem;
     object-fit: contain;
-    z-index:12
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #e50914;
+    z-index:12;
+    font-weight: 600;
   }
 }
 

@@ -23,23 +23,14 @@ function NavBar() {
       setError("Failed to logout");
     }
   }
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     if (window.scrollY > 100) {
-  //       handleShow(true);
-  //     } else handleShow(false);
-  //   });
-  //   return () => {
-  //     window.removeEventListener("scroll");
-  //   };
-  // }, []);
 
   return (
     <div className={`NavBar ${show && "NavBar__change"}`}>
       <img className="NavBar__logo" src={logo} alt="image logo" />
       {error && <p>"Logout Failed"</p>}
-      <p>{currentUser.email}</p>
       <Link to="/updateprofile">
+      <p className="NavBar__text">{currentUser.email}</p>
+      {/* <Link to="/updateprofile"> */}
         <img className="NavBar__userIcon" src={userIcon} alt="user icon" />
       </Link>
       <button className="NavBar__button" onClick={handleLogOut}>

@@ -12,6 +12,7 @@ import SearchMovieName from "../SearchMovieName/SearchMovieName";
 import Youtube from "react-youtube";
 import movieTrailer from "movie-trailer";
 import WatchLater from "../WatchLater/WatchLater";
+import AlreadyWatched from "../AlreadyWatched/AlreadyWatched";
 const API_KeyOMDb = "edf3f73f";
 
 function Search() {
@@ -124,7 +125,6 @@ useEffect(()=>{
                 src={movie.Poster}
                 alt="movie"
                 onClick={() => handleSearchMovieClick(movie)}
-                // onClick={() => handleWatchClick(movie)}
               />
 
               <div className="rowSearch__overlay"
@@ -161,8 +161,7 @@ useEffect(()=>{
               />
               <div className="rowSearch__overlay"
               onClick={() => handleRemoveWatchClick(watchLaterMovie)}
->
-                <WatchLater />
+>                <AlreadyWatched />
               </div>
             </div>
           ))}
