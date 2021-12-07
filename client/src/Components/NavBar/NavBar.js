@@ -23,16 +23,16 @@ function NavBar() {
       setError("Failed to logout");
     }
   }
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        handleShow(true);
-      } else handleShow(false);
-    });
-    return () => {
-      window.removeEventListener("scroll");
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     if (window.scrollY > 100) {
+  //       handleShow(true);
+  //     } else handleShow(false);
+  //   });
+  //   return () => {
+  //     window.removeEventListener("scroll");
+  //   };
+  // }, []);
 
   return (
     <div className={`NavBar ${show && "NavBar__change"}`}>

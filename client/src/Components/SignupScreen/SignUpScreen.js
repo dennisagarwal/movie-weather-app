@@ -1,7 +1,5 @@
-// import {auth} from '../../firebase';
 import React from "react";
 import logo from "../../assets/logo/LogoMakr.png";
-
 import "./SignUpScreen.scss";
 import { useRef, useState } from "react";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
