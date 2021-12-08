@@ -10,11 +10,7 @@ import Youtube from "react-youtube";
 import movieTrailer from "movie-trailer";
 // import Search from "../Search/Search";
 const API_KEY = "e0cf5e21ab86909a17aa9ca1c8c7a5b4";
-<<<<<<< Updated upstream
-const urlStart = `https://image.tmdb.org/t/p/original`;
-=======
 const urlStart = "https://image.tmdb.org/t/p/w92/";
->>>>>>> Stashed changes
 
 // function Row(props) {, we are destructuring in the line below
 //passing heading and request  url as props below
