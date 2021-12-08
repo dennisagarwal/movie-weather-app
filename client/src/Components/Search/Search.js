@@ -53,7 +53,7 @@ function Search() {
     // event.target.pauseVideo()
   };
 
-  useEffect(() => {
+  // useEffect(() => {
     //async function for hooks as axios will take some time to load from third party server
     //fetching request is bringing the data from the url in axios.get()
     async function getMovieRequest(searchValue) {
@@ -67,8 +67,8 @@ function Search() {
       console.log(waitToLoad.data.Search);
       return waitToLoad;
     }
-    getMovieRequest(searchValue);
-  }, [searchValue]);
+    // getMovieRequest(searchValue);
+  // }, [searchValue]);
 
   //use effect to keep the local storage movies
 useEffect(()=>{
@@ -104,6 +104,7 @@ useEffect(()=>{
       <div className="rowSearch">
         <SearchMovieName headingSearch="Dont Worry If You Are Picky, Search Here" />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+       <button type="button"  onClick={() => getMovieRequest(searchValue)}>Submit</button>
         <div  className="rowSearch__cards">
           {movies && movies.map((movie) => (
             <div className="rowSearch__container">
