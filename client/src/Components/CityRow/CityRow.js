@@ -94,28 +94,6 @@ setCity(res.data.city)
     // event.target.pauseVideo()
   };
 
-  // function updateCity(city){
-  // setCity(city)
-  // }
-
-  // useEffect(() => {
-  //   //async function for hooks as axios will take some time to load from third party server
-  //   //fetching request is bringing the data from the url in axios.get()
-  //   async function getMovieCityRequest(city) {
-  //     const waitToLoad = await axios.get(
-  //       `http://www.omdbapi.com/?s=${city}&apikey=edf3f73f&page=1`
-  //     );
-  //     //`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}` is one example
-  //     if (waitToLoad.data.Search) {
-  //       setMovies(waitToLoad.data.Search);
-  //     }
-  //     console.log(waitToLoad.data.Search);
-  //     return waitToLoad;
-  //   }
-
-  //   getMovieCityRequest(city);
-  // }, [city]);
-
   console.log(movies);
 
   return (

@@ -42,6 +42,21 @@ function WeatherRow() {
       });
   }
 
+<<<<<<< Updated upstream
+=======
+       function getMovieWeatherRequest(currentWeather) {
+      axios.get(
+        `https://www.omdbapi.com/?s=${currentWeather}&apikey=edf3f73f&page=1`
+      ).then((res)=>{
+      console.log(res.data)
+      setMovies(res.data.Search)
+      })
+    }
+
+
+
+  // const city = UseGeolocation({city})
+>>>>>>> Stashed changes
   let settings = {
     dots: true,
     infinite: false,
@@ -79,7 +94,14 @@ function WeatherRow() {
   const _onReady = (event) => {
     event.target.pauseVideo();
   };
+<<<<<<< Updated upstream
   const _onStateChange = (event) => {};
+=======
+  const _onStateChange = (event) => {
+    // event.target.pauseVideo()
+  };
+
+>>>>>>> Stashed changes
 
   console.log(movies);
 

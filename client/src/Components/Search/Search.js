@@ -86,9 +86,9 @@ useEffect(()=>{
   const handleWatchClick = (movie) => {
     console.log("handleWatchClick")
     console.log(watchLaterMovies)
-    const newWatchLater = [...watchLaterMovies, movie];
-    setWatchLaterMovies(newWatchLater);
-    localStorageMovie(newWatchLater)
+    // const newWatchLater = [...watchLaterMovies, movie];
+    setWatchLaterMovies( [...watchLaterMovies, movie]);
+    localStorageMovie( [...watchLaterMovies, movie])
   };
 // click function to remove movie from watch later list
   const handleRemoveWatchClick = (movie) => {
@@ -105,7 +105,7 @@ useEffect(()=>{
         <SearchMovieName headingSearch="Dont Worry If You Are Picky, Search Here" />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
         <div  className="rowSearch__cards">
-          {movies.map((movie, index) => (
+          {movies && movies.map((movie) => (
             <div className="rowSearch__container">
               <img
                 key={movie.id}
@@ -136,7 +136,7 @@ useEffect(()=>{
         <SearchMovieName headingSearch="Watch Later" />
 
         <div  className="rowSearch__cards">
-          {watchLaterMovies && watchLaterMovies.map((watchLaterMovie, index) => (
+          {watchLaterMovies && watchLaterMovies.map((watchLaterMovie) => (
 
             <div className="rowSearch__container">
               <img
