@@ -104,7 +104,7 @@ useEffect(()=>{
       <div className="rowSearch">
         <SearchMovieName headingSearch="Dont Worry If You Are Picky, Search Here" />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-       <button type="button"  onClick={() => getMovieRequest(searchValue)}>Submit</button>
+       <button className="rowSearch__button" type="button"  onClick={() => getMovieRequest(searchValue)}>Search</button>
         <div  className="rowSearch__cards">
           {movies && movies.map((movie) => (
             <div className="rowSearch__container">

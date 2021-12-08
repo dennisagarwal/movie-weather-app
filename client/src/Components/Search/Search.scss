@@ -54,6 +54,17 @@
     transition: transfrom 1000ms;
     border-radius: 0.5rem;
   }
+  &__button{
+    border: none;
+    width:6rem;
+    height: 3rem;
+    object-fit: contain;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: 600;
+    margin-left:2rem;
+  }
 }
 .row__card:hover {
   transform: scale(1.2);
