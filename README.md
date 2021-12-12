@@ -30,4 +30,28 @@ $ npm start
 
  **1.** Login Page
  
- ![]/images/Log-In.png
+ ![](images/Log-In.png)
+ 
+  **2.** SignUp Page
+ 
+ ![](images/Sign-Up.png)
+ 
+  **3.** Reset Password Page
+ 
+ ![](images/Reset-Password.png)
+ 
+  **4.** Update Password Page
+ 
+ ![](images/Update-Password1.png)
+ 
+  **5.** Home Page
+ 
+ ![](images/Home-Page.png)
+ 
+  **6.** Search Page
+ 
+ ![](images/Search-Page.png)
+ 
+ ##### Website Link
+ 
+ https://movie-weather-app.web.app/
