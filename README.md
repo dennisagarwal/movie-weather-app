@@ -26,6 +26,18 @@ $ npm install
 $ npm start
 ```
 
+## Tech Stack
+
+- React JS.
+- React Hook.
+- React-Router
+- Node.js and Express
+- APIs.
+- HTML, BEM methodoloy.
+- Flexbox, SASS.
+- Axios
+
+
 #### Website Glimpse
 
  **1.** Login Page
