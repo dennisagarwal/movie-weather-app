@@ -85,10 +85,16 @@ useEffect(()=>{
 // click function to add movie to watch later list
   const handleWatchClick = (movie) => {
     console.log("handleWatchClick")
-    console.log(watchLaterMovies)
+    console.log(watchLaterMovies);
+    //  console.log([...movies]);
+    console.log(movie)
+    //  console.log([...watchLaterMovies]);
     // const newWatchLater = [...watchLaterMovies, movie];
-    setWatchLaterMovies( [...watchLaterMovies, movie]);
-    localStorageMovie( [...watchLaterMovies, movie])
+    // setWatchLaterMovies( [...watchLaterMovies, ...movie]);
+    // localStorageMovie( [...watchLaterMovies, ...movie])
+    setWatchLaterMovies( watchLaterMovies==null ?[movie]:[...watchLaterMovies, movie]);
+    localStorageMovie( watchLaterMovies==null ?[movie]:[...watchLaterMovies, movie])
+
   };
 // click function to remove movie from watch later list
   const handleRemoveWatchClick = (movie) => {
